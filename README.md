@@ -1,22 +1,16 @@
-# Audio-Steganography-CLI-Tool
-## 🎵 Cipher-Shadow-Audio-CLI 🔐
+# 🎵 Audio-Steganography-CLI-Tool 🔐
 
-A Python-based **Audio Steganography Command Line Tool** that allows you
-to **encrypt a hidden message** and embed it inside a **16-bit WAV audio
-file**, and later **extract & decrypt** it using a password.
-
-This CLI tool uses **Fernet encryption**, **PBKDF2-HMAC key
-derivation**, and **LSB-based audio steganography**, designed for
-terminal users, scripting, and automation.
+A Python-based **Audio Steganography Command Line Tool** that allows you to **encrypt a hidden message** and embed it inside a **16-bit WAV audio file**, and later **extract & decrypt** it using a password.
+This CLI tool uses **Fernet encryption**, **PBKDF2-HMAC key derivation**, and **LSB-based audio steganography**, designed for terminal users, scripting, and automation.
 
 ---
 
 ## 🧱 Project Structure
 
-    Cipher-Shadow-Audio-CLI/
+    Audio-Steganography-CLI-Tool/
     │
-    ├── audio_encrypt_cli.py         # Main GUI Application
-    └── README.md                    # Project documentation
+    ├── audio_steganography.py         # Main CLI Application
+    └── README.md                      # Project documentation
 
 ---
 
@@ -65,19 +59,19 @@ Standard libraries like `wave`, `array`, `tkinter`, `base64`, and `struct` are a
 **1. Clone the repository:**
 
 ```bash
-git clone https://github.com/ShakalBhau0001/Cipher-Shadow.git
+git clone https://github.com/ShakalBhau0001/Audio-Steganography-CLI-Tool.git
 ```
 
 **2. Enter the project folder:**
 
 ```bash
-cd Cipher-Shadow-Audio-CLI
+cd Audio-Steganography-CLI-Tool
 ```
 
 **3. Run the GUI:**
 
 ```bash
-python audio_encrypt_cli.py
+python audio_steganography.py
 ```
 
 ---
@@ -89,31 +83,31 @@ python audio_encrypt_cli.py
 #### 1. Text Encrypt & Embed
 
 ``` bash
-python audio_encrypt_cli.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message "secret"
+python audio_steganography.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message "secret"
 ```
 
 ```bash
-python audio_encrypt_cli.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message "Enter Your Secret Message"
+python audio_steganography.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message "Enter Your Secret Message"
 ```
 
 #### 2. Text File Encrypt & Embed
 
 ``` bash
-python audio_encrypt_cli.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message-file secret.txt
+python audio_steganography.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message-file secret.txt
 ```
 
 ```bash
-python audio_encrypt_cli.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message-file Add Your Secret txt file
+python audio_steganography.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message-file Add Your Secret txt file
 ```
 
 ### 🔓 Decrypt & Extract
 
 ``` bash
-python audio_encrypt_cli.py decrypt --in-wav stego.wav --password mypass
+python audio_steganography.py decrypt --in-wav stego.wav --password mypass
 ```
 
 ```bash
-python audio_encrypt_cli.py decrypt --in-wav outputfile.wav --password yourpassword
+python audio_steganography.py decrypt --in-wav outputfile.wav --password yourpassword
 ```
 
 ---
@@ -155,6 +149,7 @@ python audio_encrypt_cli.py decrypt --in-wav outputfile.wav --password yourpassw
 - Decrypts message
 
 ---
+
 ## ⚠️ Common Errors
 
 - **Wrong password** → Decryption fails
@@ -163,13 +158,45 @@ python audio_encrypt_cli.py decrypt --in-wav outputfile.wav --password yourpassw
 - **Wrong WAV file** → MAGIC header not found
 
 ---
+
 ## 🌟 Future Enhancements
 
 - Add support for larger audio files
 - Add progress bar during embedding
 - Add message file export option
 - Improve error handling for corrupted audio
-- Add option for binary file hiding (not just text)
+- Add option for binary file hiding
+
+---
+
+## 📦 Extended Version
+
+This repository focuses on a **specific steganography technique** implemented
+as a **command-line (CLI) learning project**.
+
+The goal of this project is to:
+- Understand how steganography works at a practical level  
+- Experiment with data hiding techniques  
+- Learn how CLI-based security tools are structured  
+
+For a **more advanced and combined implementation** that includes:
+- Image steganography  
+- Audio steganography  
+- File encryption support  
+
+please refer to:
+
+🔗 **[StegaVault-CLI](https://github.com/ShakalBhau0001/StegaVault-CLI) (WIP)**
+
+---
+
+## ⚠️ Disclaimer
+
+This project is intended for **educational and research purposes only**.
+
+It is **not designed for real-world secure communication**.
+Steganography alone does not guarantee secrecy and should not be considered
+a replacement for proper cryptographic security.
 
 ---
 
