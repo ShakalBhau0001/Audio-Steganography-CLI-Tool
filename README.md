@@ -7,10 +7,15 @@ This CLI tool uses **Fernet encryption**, **PBKDF2-HMAC key derivation**, and **
 
 ## 🧱 Project Structure
 
-    Audio-Steganography-CLI-Tool/
-    │
-    ├── audio_steganography.py         # Main CLI Application
-    └── README.md                      # Project documentation
+```
+Audio-Steganography-CLI-Tool/
+│
+├── assets/                # Screenshots
+├── main.py                # Basic CLI Version
+├── interactive.py         # Rich-powered CLI
+├── requirements.txt       # Dependencies
+└── README.md              # Project documentation
+```
 
 ---
 
@@ -29,6 +34,16 @@ This CLI tool uses **Fernet encryption**, **PBKDF2-HMAC key derivation**, and **
 - Decrypts message securely
 - Prints decrypted message directly in terminal
 
+### 🎨 Rich CLI (Interactive Mode)
+- Beautiful colored terminal UI using Rich
+- Displays key matrix in a structured table
+- Interactive prompts with validation
+- Clean and readable output panels
+
+### ⚡ Dual Mode Support
+- 🧼 Basic CLI → Lightweight, no dependencies
+- 🎨 Rich CLI → Enhanced UI with colors and panels
+
 ---
 
 ## 🛠 Technologies Used
@@ -41,37 +56,48 @@ This CLI tool uses **Fernet encryption**, **PBKDF2-HMAC key derivation**, and **
 | **array module**                       | Audio sample manipulation |
 | **cryptography (Fernet + PBKDF2HMAC)** | Encryption                |
 | **LSB Steganography**                  | Data embedding            |
-
----
-
-## 📌 Requirements
-
-``` bash
-pip install cryptography
-```
-
-Standard libraries like `wave`, `array`, `tkinter`, `base64`, and `struct` are already included with Python.
+| **Rich**                               | Styled CLI, colors, panels |
 
 ---
 
 ## ▶️ How to Run
 
-**1. Clone the repository:**
-
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/ShakalBhau0001/Audio-Steganography-CLI-Tool.git
 ```
 
-**2. Enter the project folder:**
-
+### 2️⃣ Navigate to the project folder
 ```bash
 cd Audio-Steganography-CLI-Tool
 ```
 
-**3. Run the GUI:**
+### 3️⃣ Install Dependencies
 
 ```bash
-python audio_steganography.py
+pip install rich cryptography
+```
+
+**OR**
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 3️⃣ Running the Project
+
+#### 🧼 Basic CLI Version
+
+```bash
+python main.py
+```
+
+#### 🎨 Rich Interactive Version
+
+```bash
+python interactive.py
 ```
 
 ---
@@ -82,32 +108,44 @@ python audio_steganography.py
 
 #### 1. Text Encrypt & Embed
 
-``` bash
-python audio_steganography.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message "secret"
-```
+> Syntax :
 
 ```bash
-python audio_steganography.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message "Enter Your Secret Message"
+python main.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message "Enter Your Secret Message"
+```
+
+> Example :
+
+``` bash
+python main.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message "secret"
 ```
 
 #### 2. Text File Encrypt & Embed
 
-``` bash
-python audio_steganography.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message-file secret.txt
-```
+> Syntax :
 
 ```bash
-python audio_steganography.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message-file Add Your Secret txt file
+python main.py encrypt --in-wav inputfile.wav --out-wav outputfile.wav --password yourpassword --message-file Add Your Secret txt file
+```
+
+> Example :
+
+``` bash
+python main.py encrypt --in-wav cover.wav --out-wav stego.wav --password mypass --message-file secret.txt
 ```
 
 ### 🔓 Decrypt & Extract
 
-``` bash
-python audio_steganography.py decrypt --in-wav stego.wav --password mypass
-```
+> Syntax :
 
 ```bash
-python audio_steganography.py decrypt --in-wav outputfile.wav --password yourpassword
+python main.py decrypt --in-wav outputfile.wav --password yourpassword
+```
+
+> Example :
+
+``` bash
+python main.py decrypt --in-wav stego.wav --password mypass
 ```
 
 ---
@@ -197,6 +235,26 @@ This project is intended for **educational and research purposes only**.
 It is **not designed for real-world secure communication**.
 Steganography alone does not guarantee secrecy and should not be considered
 a replacement for proper cryptographic security.
+
+---
+
+## 📸 Preview
+
+### 1. **Encryption**
+
+![Rich CLI Preview](assets/AUDS-1.png)
+
+### 2. **Decryption**
+
+![Rich CLI Preview](assets/AUDS-2.png)
+
+### 3. **Info**
+
+![Rich CLI Preview](assets/AUDS-3.png)
+
+### 4. **Exit**
+
+![Rich CLI Preview](assets/AUDS-0.png)
 
 ---
 
